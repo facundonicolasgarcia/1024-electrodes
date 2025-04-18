@@ -1,0 +1,11 @@
+# Archivos generados
+###########################
+
+*.mat
+*.h5
+*.fig
+*.png
+*.asv
+
+# Carpeta con algunos resultados
+results\
