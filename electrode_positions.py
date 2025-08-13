@@ -6,6 +6,7 @@ ID_array: array with 1024 rows and 4 columns: electrode_ID, NSP_ID, array_ID, wi
 
 import odml
 import numpy as np
+import scipy.io as sio
 
 monkey = 'A'
 
@@ -40,3 +41,5 @@ for array in file_content['Arrays'].sections:
 # Save arrays
 np.save(rf".\{monkey}_electrode_positions.npy", positions_arr)
 np.save(rf".\{monkey}_electrode_ID.npy", ID_array)
+
+sio.savemat(rf".\{monkey}_electrode_positions.mat", {'positions_arr': positions_arr, 'ID_array': ID_array})

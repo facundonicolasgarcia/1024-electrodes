@@ -1,8 +1,15 @@
-function mask = subsample_mask(f)
+function mask = subsample_mask(f, x, y)
     % returns mask on electrode indexes: contains ones for the subsample
     % electrodes and zeros elsewhere
-    i = mod(0:1023, 8); % row of the array of electrodes
-    j = floor(mod(0:1023, 64)/ 8); % column
+
+    arguments
+        f (1,1) uint8
+        x (1,1) int8 = 0
+        y (1,1) int8 = 0
+    end
+
+    i = int8(mod(0:1023, 8))-x; % row of the array of electrodes
+    j = int8(floor(mod(0:1023, 64)/ 8))-y; % column
     
     switch f
         case 1

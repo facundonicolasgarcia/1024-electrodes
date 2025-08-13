@@ -44,3 +44,7 @@ grid on
 %% Save figure
 
 savefig(fig_path);
+
+%% Avalanches under subsampling
+
+subsampling_factors = 2^(0:)
